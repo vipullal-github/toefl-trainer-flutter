@@ -12,6 +12,11 @@ class CategoryListScreen extends StatelessWidget {
         return ListTile(
           title: Text(e.categoryName),
           subtitle: Text(e.description),
+          onTap: () {
+            Navigator.of(context).pushNamed("/wordList");
+            // Navigator.of(context).push(MaterialPageRoute(
+            //     builder: (context) => const WordListScreen()));
+          },
         );
       },
     ).toList();

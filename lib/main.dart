@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:wordlist/app_data_provider.dart';
 import 'package:wordlist/category_list_screen.dart';
+import 'package:wordlist/word_list_screen.dart';
 
 void main() {
   runApp(
@@ -19,14 +20,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-        ),
-        home:
-            const CategoryListScreen() //const MyHomePage(title: 'Flutter Demo Home Page'),
-        );
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      routes: {
+        '/': (context) => const CategoryListScreen(),
+        '/wordList': (context) => const WordListScreen(),
+      },
+      initialRoute: '/',
+    );
   }
 }
 
